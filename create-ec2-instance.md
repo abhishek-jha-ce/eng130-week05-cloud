@@ -45,10 +45,10 @@ Select this Image (AMI):
 </p>
 
 The most commonly used instace types are:
-- General Purpose - the t2.micro instance, which we are using is a general purpose instance.
-- Compute Optimized - When we need high performance processors. For e.g. high performance web servers, high performance computing (HPC), scientific modeling, dedicated gaming servers.
-- Memory Optimized - Memory optimized instances are designed to deliver fast performance for workloads that process large data sets in memory. For e.g. real-time big data analytics.
-- Storage Optimized - Storage optimized instances are designed for workloads that require high, sequential read and write access to very large data sets on local storage. For e.g. database
+- **General Purpose** - the t2.micro instance, which we are using is a general purpose instance.
+- **Compute Optimized** - When we need high performance processors. For e.g. high performance web servers, high performance computing (HPC), scientific modeling, dedicated gaming servers.
+- **Memory Optimized** - Memory optimized instances are designed to deliver fast performance for workloads that process large data sets in memory. For e.g. real-time big data analytics.
+- **Storage Optimized** - Storage optimized instances are designed for workloads that require high, sequential read and write access to very large data sets on local storage. For e.g. database
 
 **Step 7**: We select a key-pair login. This is to make sure we have the access to our `.pem` file before launching our instance. The `.pem` file is stored in the `.ssh` folder.
 
@@ -79,3 +79,31 @@ If we're selecting any existing `Security Group` we don't have to repeat point 2
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110366380/199299908-e86fed64-d6c1-466a-b9c7-cf0cb907159f.png">
 </p>
+
+**Step 11**: We can press the `Connect` button to see the options that we have to connect to the `EC2 instance`.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/199300766-eee7b69b-9c01-4d53-a0f8-50f693e4e4ed.png">
+</p>
+
+- From the terminal we can connect to our instance using ssh:
+
+```
+ssh -i "eng130.pem" ubuntu@ec2-3-250-67-179.eu-west-1.compute.amazonaws.com
+```
+
+Now we are connected to our `ec2 instance`. We can install `nginx`:
+
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt install nginx
+```
+
+After installing `nginx`, if we go to the browser and type our public `ip address` we can see the following:
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/199304091-b174e663-fcc9-45d6-bda1-ee3eafaaa7d8.png">
+</p>
+
+
