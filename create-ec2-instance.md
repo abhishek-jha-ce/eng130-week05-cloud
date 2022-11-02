@@ -1,6 +1,7 @@
 # Creating an EC2 Instance
 **Pre-requisite**
 - We have to save our *.pem* file containing the key into the `.ssh` folder. `C:Users/username/.ssh`.
+- Change the permission of the file to read only. `$chmod 400 <filename>`
 - Select the location as `Europe (Ireland)`, which is `eu-west-1` region. We will be working mostly from this location. 
 
 
