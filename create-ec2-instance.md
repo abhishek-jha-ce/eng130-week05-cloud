@@ -1,4 +1,8 @@
 # Creating an EC2 Instance
+**Pre-requisite**
+- We have to save our *.pem* file containing the key into the `.ssh` folder. `C:Users/username/.ssh`.
+- Select the location as `Europe (Ireland)`, which is `eu-west-1` region. We will be working mostly from this location. 
+
 
 **Step 1**: Log-in to Amazon Console
 
@@ -105,5 +109,47 @@ After installing `nginx`, if we go to the browser and type our public `ip addres
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110366380/199304091-b174e663-fcc9-45d6-bda1-ee3eafaaa7d8.png">
 </p>
+
+### Setting up reverse proxy with `nginx`
+
+We already have `nginx` installed in our `Virtual Machine` or the `EC2 Instance`. We can setup a reverse proxy by modifying the `deault` file.
+
+```
+$ sudo nano /etc/nginx/sites-available/default
+```
+
+- Inside this file, find the `location` block and modify it as follows:
+
+```
+   location / {
+        proxy_pass http://localhost:8080; #Change this to the port of your application
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+```
+- Save the file, and test the configuration.
+
+```
+$ sudo nginx -t
+
+```
+- If there is no syntax error, we should receive this message.
+
+```
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
+- Restart `nginx`, for the changes to take effect.
+
+```
+$sudo systemctl restart nginx
+```
+
+- Since we haven't hosted anything yet, we will see the following message in the browser.
+
+![image](https://user-images.githubusercontent.com/110366380/199454016-def7450e-e04c-446d-8e15-11bed06da912.png)
 
 
