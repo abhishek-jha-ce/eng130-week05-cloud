@@ -28,9 +28,13 @@ scp -i eng130.pem -r /c/Users/abhis/Downloads/app/ ubuntu@ec2-34-245-181-47.eu-w
 - To Use an automation script, while creating the instance, select Advanced Option, scroll down and in the User Data section add the bash script.
 
 <p align="center">
-  <img src="">
+  <img src="https://user-images.githubusercontent.com/110366380/199686052-d4034526-2a4f-47eb-8695-76330fdfbb2b.png">
 </p>
 
 *Note*: This script will only run when creating the instance. It can't be accessed later.
 
+
+![image](https://user-images.githubusercontent.com/110366380/199686455-176149cb-6754-4923-9adf-ef52120e87f8.png)
+
+![image](https://user-images.githubusercontent.com/110366380/199686645-6fe87167-0c5e-48c7-8b90-1e242457d0e0.png)
 
