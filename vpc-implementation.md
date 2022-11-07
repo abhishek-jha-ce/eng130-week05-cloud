@@ -28,5 +28,26 @@ An Internet gateway is used to transfer communications between an enterprise net
 
 #### Step 2.1: Attach the Internet Gateway to the VPC
 
-After the `Internet Gateway` is created, we will see an option to attach it to the VPC. If no option present, we can select `Actions` and then `Attach to a VPC`.
+- After the `Internet Gateway` is created, we will see an option to attach it to the VPC. 
+- If no option present, we can select `Actions` and then `Attach to a VPC`.
+- Click on `Attach Internet Gateway` to attach it. The state of the gateway should be showing as `Attached`.
 
+### Step 3: Create a Subnet
+
+- To create a subnet, click on `Subnets` on the left blade, and then click on `Create Subnet`.
+- Select the VPC we created earlier.
+- Give the subnet a name, and let the availibility zone as `no preference`.
+
+We are creating 2 subnet here:
+
+  #### Public Subnet
+  ```
+  In the IPv4 CIDR Block, use `10.0.3.0/24`
+  ```
+  
+  #### Private Subnet
+  ```
+  In the IPv4 CIDR Block, use `10.0.15.0/24` 
+  ```
+  
+- Click on `Create Subnet` to complete the process.
