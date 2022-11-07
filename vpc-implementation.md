@@ -1,10 +1,10 @@
 # Implementing VPC for our App
 
-![Untitled Diagram drawio(1)](https://user-images.githubusercontent.com/110366380/200374233-f7d42141-a451-4c8a-b30d-6dfb65b9f9cb.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200374233-f7d42141-a451-4c8a-b30d-6dfb65b9f9cb.png">
+</p>
 
 ### Step 1: Create a VPC
-
-
 
 Amazon Virtual Private Cloud (Amazon VPC) enables us to launch AWS resources into a virtual network that we've defined. This virtual network closely resembles a traditional network that we operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
 
@@ -20,9 +20,6 @@ Choose the following settings to setup the VPC:
 - Make sure to select `No IPv6 CIDR Block`
 - Leave the Tenency as `default`.  
 - Finally click on `Create VPC`. It will create a new VPC with the provided name.
-
-
-
 
 ### Step 2: Create a Internet Gateway
 
@@ -91,8 +88,17 @@ Target: Internet Gateway - As soon as we select it, It will populate it with the
 
 ### Step 5: Create an EC2 Instance within the VPC.
 
+- We already have the image (AMI) for the `app` and `database` Virtual Machine available. We will reuse the same image.
+- Rest all step is same as creating the instance.
+- Edit the network settings.
+- Select the Virtual Private Cloud (VPC), we created earlier.
+- Select the respective `subnets`.
+- Create a new Security Group for each subnet.
+
 
 #### Security Group for App: 
+
+*Note*: The `auto-assign public IP` should be enabled for the public subnet.
 
 - SSH for Port 22 from `My IP`.
 - HTTP access for Port 80 from `0.0.0.0/0`.
@@ -100,5 +106,7 @@ Target: Internet Gateway - As soon as we select it, It will populate it with the
 
 #### Security Group for Database:
 
-- Custom TCP for Port 27017 from `10.0.3.0/24`.
+*Note*: The `auto-assign public IP` should be disabled for the private subnet.
+
+- Custom TCP for Port 27017 from `10.0.X.0/24`. X=3 in this instance. To allow Mongodb traffic from the app (public subnet).
 - SSH for Port 22 from `My IP`.
