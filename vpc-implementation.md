@@ -51,3 +51,35 @@ We are creating 2 subnet here:
   ```
   
 - Click on `Create Subnet` to complete the process.
+
+### Step 4: Create a Route Table
+
+- To create a route table, click on `Route tables`
+- Give it a Name (append public and private to its name to make sure we don't get confused later).
+- Select the earlier created VPC. 
+- Click on `Create route table`.
+
+*Note*: The `route table` is created but it doesn't contains any information yet.
+
+#### Step 4.1: Add `routing rules` to the table
+
+- Click on `Edit routes` selecting the required route.
+- One route will be already present inside, which is for the `VPC`. It will be the same IP as mentioned while createing the `VPC` i.e. `10.0.0.0/16`
+
+#### Public Subnet
+- We need to give access to the internet for the public subnet, so we add:
+
+```
+Destionation: 0.0.0.0/0 - For everyone to access.
+Target: Internet Gateway - As soon as we select it, It will populate it with the Internet Gateway that we created.
+```
+
+#### Private Subnet
+
+
+#### Step 4.2: Associate the `Route table` to the respective `Subnet`
+- Click on `subnet association` tab at the bottom half of the page.
+- Select the preferred subnet.
+- Click on `Save association` to save it.
+
+
