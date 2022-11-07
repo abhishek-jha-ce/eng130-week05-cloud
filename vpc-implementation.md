@@ -110,3 +110,4 @@ Target: Internet Gateway - As soon as we select it, It will populate it with the
 
 - Custom TCP for Port 27017 from `10.0.X.0/24`. X=3 in this instance. To allow Mongodb traffic from the app (public subnet).
 - SSH for Port 22 from `My IP`.
+
