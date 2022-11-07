@@ -1,6 +1,10 @@
 # Implementing VPC for our App
 
+![Untitled Diagram drawio(1)](https://user-images.githubusercontent.com/110366380/200374233-f7d42141-a451-4c8a-b30d-6dfb65b9f9cb.png)
+
 ### Step 1: Create a VPC
+
+
 
 Amazon Virtual Private Cloud (Amazon VPC) enables us to launch AWS resources into a virtual network that we've defined. This virtual network closely resembles a traditional network that we operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
 
@@ -16,6 +20,8 @@ Choose the following settings to setup the VPC:
 - Make sure to select `No IPv6 CIDR Block`
 - Leave the Tenency as `default`.  
 - Finally click on `Create VPC`. It will create a new VPC with the provided name.
+
+
 
 
 ### Step 2: Create a Internet Gateway
@@ -83,3 +89,16 @@ Target: Internet Gateway - As soon as we select it, It will populate it with the
 - Click on `Save association` to save it.
 
 
+### Step 5: Create an EC2 Instance within the VPC.
+
+
+#### Security Group for App: 
+
+- SSH for Port 22 from `My IP`.
+- HTTP access for Port 80 from `0.0.0.0/0`.
+- Custom TCP for Port 3000 from `0.0.0.0/0`.
+
+#### Security Group for Database:
+
+- Custom TCP for Port 27017 from `10.0.3.0/24`.
+- SSH for Port 22 from `My IP`.
