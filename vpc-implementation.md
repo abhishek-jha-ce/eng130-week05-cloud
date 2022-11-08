@@ -121,7 +121,7 @@ Target: Instance (App) - As soon as we select it, It will populate it with the I
 
 - Create Environment Variables:
 ```
-ubuntu@ip-10-0-3-29:~$ export DB_HOST=mongodb://10.0.3.29:27017/posts
+ubuntu@ip-10-0-3-29:~$ export DB_HOST=mongodb://10.0.15.193:27017/posts
 
-The IP address should match to the one on the left. It can change for every launch of the instance.
+The IP address should match to the private ip of db instance. It can change for every launch of the instance.
 ```
