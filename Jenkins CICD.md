@@ -1,11 +1,33 @@
+# What is CI/CD Pipeline?
+
+A pipeline is a process that drives software development through a path of building, testing, and deploying code, also known as CI/CD. By automating the process, the objective is to minimize human error and maintain a consistent process for how software is released.
+
 ## Continuous Integration
 
 Continuous Integration is a development practice in which the developers are required to commit changes to the source code in a shared repository several times a day or more frequently. Every commit made in the repository is then built. This allows the teams to detect the problems early. 
 
+![image](https://user-images.githubusercontent.com/110366380/201050940-fc4aaaa8-fbe7-4a78-8895-6fa24769aebf.png)
+
+## Continuous Delivery
+
+Continuous delivery is an extension of continuous integration since it automatically deploys all code changes to a testing and/or production environment after the build stage. 
+
+This means that on top of automated testing, we have an automated release process and we can deploy your application any time by clicking a button.
 
 ## Continuous Deployment
 
-Continuous deployment is a software engineering approach in which software functionalities are delivered frequently and through automated deployments
+Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of our production pipeline is released. There's no human intervention, and only a failed test will prevent a new change to be deployed to production.
+
+![image](https://user-images.githubusercontent.com/110366380/201050731-24462ae0-7d32-4065-a94e-26fdf90f15ba.png)
+
+## Difference between Continuous Integration, Continuous Delivery and Continuous Deployment
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/201051618-3e12b204-e7f1-4196-8a91-d1dcdaaedc9a.png">
+</p>
+
+![image](https://user-images.githubusercontent.com/110366380/201051919-0bca5410-94bc-4f22-8b9b-bced75eaa9fe.png)
+
 
 ## Webhook 
 
