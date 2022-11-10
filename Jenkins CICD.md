@@ -42,8 +42,9 @@ Jenkins is an open-source automation tool written in Java with plugins built for
 ### Jenkins Stages
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110366380/200539483-96927056-397f-4305-93a6-f0975257d398.png">
+  <img src="https://user-images.githubusercontent.com/110366380/201057030-0fe1a35e-3575-439b-aa27-6407aa0d2484.png">
 </p>
+
 
 ### How it works!
 
